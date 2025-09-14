@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:meditation_app/data/quotes.dart';
 import 'package:intl/intl.dart';
-import 'package:meditation_app/screens/meditation_types.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  final Function(int) onNavigate;
+  // ignore: prefer_const_constructors_in_immutables
+  Home({super.key, required this.onNavigate});
 
   @override
   State<Home> createState() => _HomeState();
@@ -50,7 +51,7 @@ class _HomeState extends State<Home> {
                 style: TextStyle(
                   fontSize: screenHeight * 0.037,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xff461A04),
+                  color: Color(0xff392513),
                 ),
               ),
 
@@ -81,9 +82,178 @@ class _HomeState extends State<Home> {
               ),
               Padding(
                 padding: EdgeInsetsGeometry.only(top: screenHeight * 0.078),
-                child: ElevatedButton(
-                  onPressed: ,
-                  child: Text("Start Meditation"),
+                child: SizedBox(
+                  height: screenHeight * 0.063,
+                  width: screenWidth * 0.7,
+                  child: ElevatedButton(
+                    onPressed: () => widget.onNavigate(1),
+                    child: Text(
+                      "Start Meditating",
+                      style: TextStyle(
+                        fontSize: screenHeight * 0.01675,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(top: screenHeight * 0.069),
+                child: Column(
+                  children: [
+                    Text(
+                      "Mindful Days",
+                      style: TextStyle(
+                        fontSize: screenHeight * 0.02,
+                        color: Color(0xff392513),
+                      ),
+                    ),
+                    SizedBox(
+                      height: screenHeight * 0.034,
+                    ), // space before boxes
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  height: screenHeight * 0.046,
+                                  width: screenWidth * 0.1,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xFF461A04),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                SizedBox(height: screenHeight * 0.0083),
+                                Text("Mon"),
+                              ],
+                            ),
+                            SizedBox(width: screenWidth * 0.009),
+                            Column(
+                              children: [
+                                Container(
+                                  height: screenHeight * 0.046,
+                                  width: screenWidth * 0.1,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xFF461A04),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                SizedBox(height: screenHeight * 0.0083),
+                                Text("Tue"),
+                              ],
+                            ),
+                            SizedBox(width: screenWidth * 0.009),
+                            Column(
+                              children: [
+                                Container(
+                                  height: screenHeight * 0.046,
+                                  width: screenWidth * 0.1,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xFF461A04),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                SizedBox(height: screenHeight * 0.0083),
+                                Text("Wed"),
+                              ],
+                            ),
+                            SizedBox(width: screenWidth * 0.009),
+                            Column(
+                              children: [
+                                Container(
+                                  height: screenHeight * 0.046,
+                                  width: screenWidth * 0.1,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xFF461A04),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                SizedBox(height: screenHeight * 0.0083),
+                                Text("Thu"),
+                              ],
+                            ),
+                            SizedBox(width: screenWidth * 0.009),
+                            Column(
+                              children: [
+                                Container(
+                                  height: screenHeight * 0.046,
+                                  width: screenWidth * 0.1,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xFF461A04),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                SizedBox(height: screenHeight * 0.0083),
+                                Text("Fri"),
+                              ],
+                            ),
+                            SizedBox(width: screenWidth * 0.009),
+                            Column(
+                              children: [
+                                Container(
+                                  height: screenHeight * 0.046,
+                                  width: screenWidth * 0.1,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xFF461A04),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                SizedBox(height: screenHeight * 0.0083),
+                                Text("Sat"),
+                              ],
+                            ),
+                            SizedBox(width: screenWidth * 0.009),
+                            Column(
+                              children: [
+                                Container(
+                                  height: screenHeight * 0.046,
+                                  width: screenWidth * 0.1,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xFF461A04),
+                                      width: 1,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                SizedBox(height: screenHeight * 0.0083),
+                                Text("Sun"),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsetsGeometry.only(top: screenHeight * 0.025),
+                child: Image.asset(
+                  "assets/images/Lotus.png",
+                  height: screenHeight * 0.24,
                 ),
               ),
             ],

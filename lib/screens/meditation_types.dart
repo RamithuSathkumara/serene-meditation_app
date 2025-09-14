@@ -20,7 +20,7 @@ class MeditationTypes extends StatelessWidget {
                 style: TextStyle(
                   fontSize: screenHeight * 0.037,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xff461A04),
+                  color: Color(0xff392513),
                 ),
               ),
             ],

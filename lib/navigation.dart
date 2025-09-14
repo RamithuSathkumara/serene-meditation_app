@@ -18,21 +18,21 @@ class _NavigationMenuState extends State<NavigationMenu> {
     });
   }
 
-  final List _pages = [
-    //Home
-    Home(),
-    //Meditation types
-    MeditationTypes(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     final double navHeight = 74; // tweak as needed
     final double horizontalMargin = 18;
 
+    final List pages = [
+      //Home
+      Home(onNavigate: navigateBottomBar),
+      //Meditation types
+      MeditationTypes(),
+    ];
+ 
     return Scaffold(
       backgroundColor: const Color(0xFFF9F5EC),
-      body: _pages[selectedIndex],
+      body: pages[selectedIndex],
 
       // Put the custom pill into Scaffold.bottomNavigationBar so it is fixed
       bottomNavigationBar: SafeArea(

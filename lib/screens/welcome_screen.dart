@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:ui';
-
-import 'package:meditation_app/screens/home.dart';
+import 'package:meditation_app/navigation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -10,8 +9,12 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width; // screen width for responsiveness
-    final screenHeight = MediaQuery.of(context).size.height; // screen height for responsiveness
+    final screenWidth = MediaQuery.of(
+      context,
+    ).size.width; // screen width for responsiveness
+    final screenHeight = MediaQuery.of(
+      context,
+    ).size.height; // screen height for responsiveness
 
     return Scaffold(
       body: Stack(
@@ -77,7 +80,7 @@ class WelcomeScreen extends StatelessWidget {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Home(),
+                              builder: (context) => const NavigationMenu(),
                             ),
                           );
                         },
