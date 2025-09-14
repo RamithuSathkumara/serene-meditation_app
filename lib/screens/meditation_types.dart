@@ -23,6 +23,10 @@ class MeditationTypes extends StatelessWidget {
                   color: Color(0xff392513),
                 ),
               ),
+              Container(
+                padding: EdgeInsetsGeometry.only(top: screenHeight * 0.03),
+                
+              ),
             ],
           ),
         ),
