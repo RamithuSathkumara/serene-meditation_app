@@ -286,7 +286,7 @@ class _MeditationState extends State<Meditation> {
                             vertical: screenHeight * 0.012,
                           ),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(100),
                           ),
                         ),
                         onPressed: _isRunning ? _stopTimer : _startTimer,
