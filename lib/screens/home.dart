@@ -249,11 +249,14 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              Container(
-                padding: EdgeInsetsGeometry.only(top: screenHeight * 0.025),
-                child: Image.asset(
-                  "assets/images/Lotus.png",
-                  height: screenHeight * 0.24,
+              Flexible(
+                child: Container(
+                  padding: EdgeInsetsGeometry.only(top: screenHeight * 0.025),
+                  child: Image.asset(
+                    "assets/images/Lotus.png",
+                    height: screenHeight * 0.24,
+                    width: screenWidth * 0.7,
+                  ),
                 ),
               ),
             ],
