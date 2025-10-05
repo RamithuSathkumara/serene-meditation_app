@@ -24,3 +24,9 @@ flutter:
   assets:
     - assets/images/background.svg
     - assets/images/Lotus.png
+    - assets/images/meditation-types/Focus.png
+    - assets/images/meditation-types/Kindness.png
+    - assets/images/meditation-types/Energy.png
+    - assets/images/meditation-types/Focus_bg.png
+    - assets/images/meditation-types/Kindness_bg.png
+    - assets/images/meditation-types/Energy_bg.png
