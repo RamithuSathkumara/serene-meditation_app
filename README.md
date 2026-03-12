@@ -1,3 +1,4 @@
 # meditation_app
 
-A new Flutter project.
+- developed using flutter
+[Home](readme images/Home screen.jpg)
