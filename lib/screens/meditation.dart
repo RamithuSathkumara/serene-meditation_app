@@ -154,6 +154,12 @@ class _MeditationState extends State<Meditation> {
         : "${_selectedHours.toString().padLeft(2, '0')}:${_selectedMinutes.toString().padLeft(2, '0')}";
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: Colors.white,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -162,26 +168,29 @@ class _MeditationState extends State<Meditation> {
                 Image.asset(
                   widget.backgroundImage,
                   fit: BoxFit.cover,
+                  height: screenHeight * 0.45, // Constrain image height
                   width: screenWidth,
                 ),
-                Center(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: screenHeight * 0.34),
+                Positioned(
+                  bottom: 20,
+                  left: 0,
+                  right: 0,
+                  child: Center(
                     child: Container(
-                      // To display the meditation name
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(100, 217, 217, 217),
+                        color: const Color.fromARGB(100, 217, 217, 217),
                         borderRadius: BorderRadius.circular(29),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Text(
-                          widget.name,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Color(0xffFFFFFF),
-                            fontSize: screenHeight * 0.037,
-                          ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8,
+                      ),
+                      child: Text(
+                        widget.name,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: screenHeight * 0.037,
                         ),
                       ),
                     ),
@@ -238,7 +247,9 @@ class _MeditationState extends State<Meditation> {
                           ),
                           alignment: Alignment.center,
                           child: Text(
-                            "${_selectedHours.toString().padLeft(2, '0')}h",
+                            _isRunning
+                                ? "${_remainingTime.inHours.toString().padLeft(2, '0')}h"
+                                : "${_selectedHours.toString().padLeft(2, '0')}h",
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -258,7 +269,9 @@ class _MeditationState extends State<Meditation> {
                           ),
                           alignment: Alignment.center,
                           child: Text(
-                            "${_selectedMinutes.toString().padLeft(2, '0')}m",
+                            _isRunning
+                                ? "${(_remainingTime.inMinutes % 60).toString().padLeft(2, '0')}m"
+                                : "${_selectedMinutes.toString().padLeft(2, '0')}m",
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
