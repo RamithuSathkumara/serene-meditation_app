@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.meditation_app"
+    namespace = "com.example.Serene"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
 
